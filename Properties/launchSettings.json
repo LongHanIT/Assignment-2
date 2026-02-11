@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "HarvestHavenSecurePortal": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7263;http://localhost:5263",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

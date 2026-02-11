@@ -1,0 +1,33 @@
+@page
+@model HarvestHavenSecurePortal.Pages.Account.VerifyOtpModel
+@{
+    ViewData["Title"] = "Verify OTP";
+}
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card p-4">
+      <h2 class="mb-1">Verify OTP</h2>
+      <p class="muted">We sent a 6-digit code to your email.</p>
+
+      @if (TempData["Info"] != null)
+      {
+          <div class="alert alert-info">@TempData["Info"]</div>
+      }
+
+      <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+          <label asp-for="Input.Otp" class="form-label"></label>
+          <input asp-for="Input.Otp" class="form-control" />
+          <span asp-validation-for="Input.Otp" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary pill px-4">Verify</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

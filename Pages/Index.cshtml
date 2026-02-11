@@ -1,0 +1,20 @@
+@page
+@model HarvestHavenSecurePortal.Pages.IndexModel
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card p-4">
+      <h1 class="mb-2">Fresh Farm Market Portal</h1>
+      <p class="muted mb-4">A security-focused membership app (Razor Pages + session auth + 2FA + reset password).</p>
+      <div class="d-flex gap-2">
+        <a class="btn btn-primary pill px-4" asp-page="/Account/Login">Sign in</a>
+        <a class="btn btn-outline-secondary pill px-4" asp-page="/Account/Register">Create account</a>
+      </div>
+      <hr class="my-4">
+      <p class="small muted mb-0">Tip: after setting up the database, run migrations, then register a new account.</p>
+    </div>
+  </div>
+</div>

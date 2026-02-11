@@ -1,0 +1,65 @@
+@page
+@model HarvestHavenSecurePortal.Pages.Home.IndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Info"] != null)
+{
+    <div class="alert alert-warning">@TempData["Info"]</div>
+}
+
+<div class="row g-3">
+    <div class="col-lg-4">
+        <div class="card p-3">
+            <div class="d-flex align-items-center gap-3">
+                <img src="@Model.PhotoPath" alt="Profile photo" class="rounded-circle border" style="width:72px;height:72px;object-fit:cover;" />
+                <div>
+                    <div class="fw-bold fs-5">@Model.FullName</div>
+                    <div class="muted">@Model.Email</div>
+                </div>
+            </div>
+            <hr />
+            <div class="small">
+                <div><span class="muted">Gender:</span> @Model.Gender</div>
+                <div><span class="muted">Phone:</span> @Model.PhoneNumber</div>
+                <div><span class="muted">Address:</span> @Model.DeliveryAddress</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="card p-4">
+            <h4 class="mb-3">Security Snapshot</h4>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded-4">
+                        <div class="muted small">Card (Decrypted for demo)</div>
+                        <div class="mono fs-5">@Model.DecryptedCard</div>
+                        <div class="muted small mt-2">Masked</div>
+                        <div class="mono">@Model.MaskedCard</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 bg-light rounded-4">
+                        <div class="muted small">Password last changed</div>
+                        <div class="fs-6">@Model.LastPasswordChangedDisplay</div>
+                        <div class="muted small mt-2">Session token issued</div>
+                        <div class="fs-6">@Model.SessionIssuedDisplay</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <h5 class="mb-2">Bio</h5>
+            <div class="p-3 border rounded-4 bg-white">
+                @Model.Bio
+            </div>
+        </div>
+    </div>
+</div>
